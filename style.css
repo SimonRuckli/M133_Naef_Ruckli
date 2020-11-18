@@ -1,0 +1,21 @@
+.flex-container {
+    display: flex;
+}
+
+.flex-container>div {
+    font-size: 30px;
+    width: 33.3%;
+    text-align: center;
+}
+
+#divTodo {
+    background-color: orange;
+}
+
+#divInProgress {
+    background-color: lightskyblue;
+}
+
+#divDone {
+    background-color: limegreen;
+}
