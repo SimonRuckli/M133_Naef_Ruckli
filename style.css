@@ -1,21 +1,39 @@
+html, body{
+    padding: 0;
+    margin: 0;
+  }
+  html{
+    height: 100%;
+  }
+  body{
+    min-height: 100%;
+  }
+
 .flex-container {
-    display: flex;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  display: -webkit-flex;
+  -webkit-flex-wrap: wrap;
+  -webkit-flex-direction: column;
+  height: 200px;
 }
 
 .flex-container>div {
     font-size: 30px;
     width: 33.3%;
     text-align: center;
+    padding: 20px 0;
 }
 
-#divTodo {
+#titleTodo {
     background-color: orange;
 }
 
-#divInProgress {
+#titleInProgress {
     background-color: lightskyblue;
 }
 
-#divDone {
+#titleDone {
     background-color: limegreen;
 }
