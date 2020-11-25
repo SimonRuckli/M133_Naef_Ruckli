@@ -19,7 +19,17 @@ body {
     display: -webkit-flex;
     -webkit-flex-wrap: wrap;
     -webkit-flex-direction: row;
-    height: 200px;
+    height: 100%;
+}
+
+#work {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    display: -webkit-flex;
+    -webkit-flex-wrap: wrap;
+    -webkit-flex-direction: row;
+    height: 100%;
 }
 
 #tasks {
@@ -29,7 +39,14 @@ body {
     display: -webkit-flex;
     -webkit-flex-wrap: wrap;
     -webkit-flex-direction: column;
-    height: 200px;
+    height: 100%;
+    width: 33.3%;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-item {
+    text-align: center;
 }
 
 .flex-container>div {
