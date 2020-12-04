@@ -1,26 +1,16 @@
-function addTaskToDo(name) {
-    var tag = document.createElement("div");
-    var text = document.createTextNode(name);
-    tag.appendChild(text);
-    var element = document.getElementById("taskToDo");
-    element.appendChild(tag);
+console.log("1");
 
-}
+var tag = document.createElement("div");
+console.log("2");
 
-function addTaskInProgress(name) {
-    var tag = document.createElement("div");
-    var text = document.createTextNode(name);
-    tag.appendChild(text);
-    var element = document.getElementById("taskInProgress");
-    element.appendChild(tag);
+var text = document.createTextNode("implementieren");
+console.log("3");
 
-}
+tag.appendChild(text);
+console.log("4");
 
-function addTaskDone(name) {
-    var tag = document.createElement("div");
-    var text = document.createTextNode(name);
-    tag.appendChild(text);
-    var element = document.getElementById("taskDone");
-    element.appendChild(tag);
+var element = document.getElementById("taskToDo");
+console.log("5");
 
-}
+element.appendChild(tag);
+console.log("6");

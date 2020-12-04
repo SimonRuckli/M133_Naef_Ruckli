@@ -71,10 +71,6 @@ body {
     height: 100%;
 }
 
-#new {
-    align-items: flex-end;
-}
-
 .flex-item {
     display: flex;
     text-align: center;
