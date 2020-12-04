@@ -1,16 +1,26 @@
-console.log("1");
+function addTaskToDo(name) {
+    var tag = document.createElement("div");
+    var text = document.createTextNode(name);
+    tag.appendChild(text);
+    var element = document.getElementById("taskToDo");
+    element.appendChild(tag);
 
-var tag = document.createElement("div");
-console.log("2");
+}
 
-var text = document.createTextNode("implementieren");
-console.log("3");
+function addTaskInProgress(name) {
+    var tag = document.createElement("div");
+    var text = document.createTextNode(name);
+    tag.appendChild(text);
+    var element = document.getElementById("taskInProgress");
+    element.appendChild(tag);
 
-tag.appendChild(text);
-console.log("4");
+}
 
-var element = document.getElementById("taskToDo");
-console.log("5");
+function addTaskDone(name) {
+    var tag = document.createElement("div");
+    var text = document.createTextNode(name);
+    tag.appendChild(text);
+    var element = document.getElementById("taskDone");
+    element.appendChild(tag);
 
-element.appendChild(tag);
-console.log("6");
+}
