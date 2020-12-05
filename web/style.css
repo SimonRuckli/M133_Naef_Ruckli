@@ -1,4 +1,3 @@
-/*Order*/
 .tasks {
     display: flex;
 }
@@ -14,4 +13,46 @@ body {
 
 .columnTitle {
     padding: 15px;
+}
+
+.dialog {
+    position: fixed;
+    padding-top: 10vh;
+    width: 100%;
+    height: 100%; 
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+  
+.dialogContent {
+    margin: auto;
+    background-color: ghostwhite;
+    padding: 5vh;
+    box-shadow: 10px 10px 5px dimgrey;
+    width: 40%;
+    text-align: center;
+}
+
+#inputTask {
+    width: 50%;
+    min-width: 100px;
+    margin-bottom: 2vh;
+    height: 25px;
+}
+ 
+.closeDialog {
+    color: dimgrey;
+    float: right;
+    font-size: 30px;
+}
+.closeDialog:hover, .close:focus {
+    cursor: pointer;
+}
+
+#ButtonCreate {
+    width: 25%;
+    min-width: 100px;
+}
+#ButtonCreate:hover {
+    cursor: pointer;
 }

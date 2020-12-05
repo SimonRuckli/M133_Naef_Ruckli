@@ -59,9 +59,44 @@ async function loadPage() {
         button.addEventListener("click", newTask);
         document.getElementById("Column_" + columns[i].Title.replace(" ", "")).lastChild.appendChild(button);
     }
+
+    document.getElementById("ButtonCreate").addEventListener("click", addTask);
+    document.getElementById("closeDialog").addEventListener("click", function() {
+        document.getElementById("Dialog").style.display = "none";
+    })
+    document.getElementById("Dialog").style.display = "none";
 }
 
 function newTask(button) {
     column = button.path[0].id.slice(-1);
+    document.getElementById("Dialog").style.display = "block";
 }
 
+async function addTask() {
+    const response = await fetch("/tasks");
+    let id = 0;
+    try {
+        const tasks = await response.json();
+        id = tasks.length;
+    } catch {}
+
+    let task = {
+        Id: id,
+        Title: document.getElementById("inputTask").value,
+        Column: column
+    }
+        
+    document.getElementById("inputTask").value = "";
+
+    await fetch(
+        "/tasks",
+        {
+            body: JSON.stringify(task),
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            method: "POST"
+    });
+
+    await loadPage();
+}
