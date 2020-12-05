@@ -19,31 +19,54 @@ async function loadPage() {
     }
 
     for (i = 0; i < columns.length; i++) {
-        let div = document.createElement("div");
-        div.className = "column";
-        div.id = "Column_" + columns[i].Title.replace(" ", "");
-        div.style.height = "100vh";
-        div.style.width = (100 / columns.length).toFixed(1) + "%";
-        if (i % 2 == 1) {
-            div.style.backgroundColor = "ghostwhite";
+        // columns
+        let divColumn = document.createElement("div");
+        divColumn.className = "column";
+        switch (i) {
+            case 0:
+                divColumn.id = "columnToDo";
+                break;
+            case 1:
+                divColumn.id = "columnInProgress";
+                break;
+            case 2:
+                divColumn.id = "columnDone";
+                break;
+        }
+        divColumn.style.height = "100vh";
+        divColumn.style.width = "33.3%";
+        if (i == 0 || i == 2) {
+            divColumn.style.backgroundColor = "ghostwhite";
         }
 
-        let divtitle = document.createElement("div");
-        divtitle.className = "column_title";
-        divtitle.style.backgroundColor = columns[i].Color;
-        let title = document.createElement("label");
-        title.innerText = columns[i].Title;
-        divtitle.appendChild(title);
+        // column titles
+        let divTitle = document.createElement("div");
+        divTitle.className = "columnTitle";
+        divTitle.style.backgroundColor = columns[i].Color;
+        let valTitle = document.createElement("label");
+        valTitle.innerText = columns[i].Title;
+        divTitle.appendChild(valTitle);
 
-        let divcontent = document.createElement("div");
-        divcontent.className = "column_content";
-        divcontent.id = "Column_Content_" + i;
-        divcontent.style.height = "100vh";
+        // column content
+        let divContent = document.createElement("div");
+        divContent.className = "columnContent";
+        switch (i) {
+            case 0:
+                divContent.id = "columnContentToDo";
+                break;
+            case 1:
+                divContent.id = "columnContentInProgress";
+                break;
+            case 2:
+                divContent.id = "columnContentDone";
+                break;
+        }
+        divContent.style.height = "90vh";
 
-        div.appendChild(divtitle);
-        div.appendChild(divcontent);
+        divColumn.appendChild(divTitle);
+        divColumn.appendChild(divContent);
 
-        document.getElementById("tasks").appendChild(div);
+        document.getElementById("tasks").appendChild(divColumn);
     }
 }
 
