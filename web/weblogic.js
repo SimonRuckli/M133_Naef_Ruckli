@@ -40,13 +40,17 @@ async function loadPage() {
         // column content
         let divContent = document.createElement("div");
         divContent.className = "columnContent";
-        divContent.id = "Column_Content" + i;
+        divContent.id = "ColumnContent" + i;
         divContent.style.height = "90vh";
         divColumn.appendChild(divTitle);
         divColumn.appendChild(divContent);
 
         // add the content
         document.getElementById("tasks").appendChild(divColumn);
+    }
+
+    for (const task of tasks) {
+        document.getElementById("Column_" + columns[task.Column].Title.replace(" ", "")).lastChild.appendChild(createTaskHTML(task.Id, task.Title));
     }
 
     for (i = 0; i < columns.length; i++) {
@@ -96,6 +100,84 @@ async function addTask() {
                 'Content-Type': 'application/json'
             },
             method: "POST"
+    });
+
+    await loadPage();
+}
+
+function createTaskHTML(id, title) {
+    let div = document.createElement("div");
+    div.className = "Task";
+    div.id = "task_" + id;
+    div.draggable = true;
+
+    let p = document.createElement("p");
+    p.innerText = title;
+    
+    let back = document.createElement("button");
+    back.className = "buttonTasks";
+    back.id = "Button_Back_Task_" + id;
+    back.addEventListener("click", editTask)
+    back.innerText = "←";
+    
+    let del = document.createElement("button");
+    del.className = "buttonTasks";
+    del.id = "Button_Delete_Task_" + id;
+    del.addEventListener("click", deleteTask);
+    del.innerText = "Delete";
+    
+    let forward = document.createElement("button");
+    forward.className = "buttonTasks";
+    forward.id = "Button_Forward_Task_" + id;
+    forward.addEventListener("click", editTask)
+    forward.innerText = "→";
+
+    div.appendChild(p);
+    div.appendChild(back);
+    div.appendChild(del);
+    div.appendChild(forward);
+
+    return div;
+}
+
+async function deleteTask(button) {
+    let id = button.path[0].id.slice(-1);
+    
+    await fetch(
+        "/tasks:" + id,
+        {
+            method: "DELETE"
+    });
+
+    await loadPage();
+}
+
+async function editTask(button) {
+    let task;
+    let isForward = false;
+    let id = button.path[0].id.slice(-1);
+    if (button.path[0].id.includes("Forward")) isForward = true;
+
+    const response = await fetch("/Tasks");
+    let tasks = await response.json();
+    tasks.forEach(element => {
+            if (element.Id == id) {
+                task = element;
+            }
+        }
+    );
+    
+    if (isForward) if (task.Column != 2) task.Column++;
+    if (!isForward) if (task.Column != 0) task.Column--;
+    
+    await fetch(
+        "/Tasks:" + id,
+        {
+            body: JSON.stringify(task),
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            method: "PUT"
     });
 
     await loadPage();

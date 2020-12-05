@@ -56,3 +56,51 @@ body {
 #ButtonCreate:hover {
     cursor: pointer;
 }
+
+#ColumnContent0 {
+    margin-right: 0.75px;
+}
+#ColumnContent1 {
+    margin: 0 0.75px;
+}
+#ColumnContent2 {
+    margin-left: 0.75px;
+}
+
+.task {
+    border-style: solid;
+    border-color: transparent;
+    background-color: lightsteelblue;
+    margin-bottom: 10px;
+}
+
+.NewTask {
+    background-color: lightgray;
+    border: none;
+    font-size: 20px;
+}
+
+.NewTask:hover {
+    cursor: pointer;
+    border: solid 1px black;
+}
+
+.buttonTasks {
+    background-color: transparent;
+    border: none;
+}
+.buttonTasks:hover {
+    background-color: lightgray;
+    border: solid 1px black;
+}
+
+.buttonCreate {
+    background-color: lightgray;
+    border: none;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.column_title {
+    padding: 10px;
+}
