@@ -1,95 +1,17 @@
-html,
-body {
-    padding: 0;
-    margin: 0;
-}
-
-html {
-    height: 100%;
-}
-
-body {
-    min-height: 100%;
-}
-
-#titles {
+/*Order*/
+.tasks {
     display: flex;
-    flex-wrap: wrap;
-    -webkit-flex-direction: row;
-    height: 100%;
 }
-
-#work {
-    display: flex;
-    flex-wrap: wrap;
-    -webkit-flex-direction: row;
-    height: 100%;
-}
-
-#row1 {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    height: 100%;
-    align-items: center;
-}
-
-#row2 {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    height: 100%;
-    align-items: center;
-}
-
-#row3 {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    height: 100%;
-    align-items: center;
-}
-
-#taskToDo {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    height: 100%;
-}
-
-#taskInProgress {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    height: 100%;
-}
-
-#taskDone {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    height: 100%;
-}
-
-.flex-item {
-    display: flex;
+  
+.tasks > div {
+    font-size: 30px;
     text-align: center;
 }
 
-.flex-container>div {
-    font-size: 30px;
-    width: 33.3%;
-    padding: 20px 0;
+body {
+    margin: 0px;
 }
 
-#titleTodo {
-    background-color: orange;
-}
-
-#titleInProgress {
-    background-color: lightskyblue;
-}
-
-#titleDone {
-    background-color: limegreen;
+.column_title {
+    padding: 15px;
 }

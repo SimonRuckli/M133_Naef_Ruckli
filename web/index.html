@@ -1,64 +1,16 @@
-<!DOCTYPE html>
-<html lang="de">
-
+<html lang="en">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-16">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kanban-Board</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="files/style.css" />
+    <title>KanBan</title>
 </head>
 
 <body>
-    <div class="flex-container" id="titles">
-
-        <div class="divColumn" id="divTodo">
-            <div class="title" id="titleTodo">
-                <label>ToDo</label>
-            </div>
-        </div>
-
-        <div class="divColumn" id="divInProgress">
-            <div class="title" id="titleInProgress">
-                <label>In Progress</label>
-            </div>
-        </div>
-
-        <div class="divColumn" id="divDone">
-            <div class="title" id="titleDone">
-                <label>Done</label>
-            </div>
-        </div>
-    </div>
-
-    <div class="flex-container" id="work">
-
-        <div class="flex-container" id="row1">
-
-            <div class="flex-container" id="taskToDo">
-                <div class="flex-item">todo1</div>
-                <div class="flex-item">todo2</div>
-
-            </div>
-        </div>
-
-        <div class="flex-container" id="row2">
-
-            <div class="flex-container" id="taskInProgress">
-                <div class="flex-item">progress1</div>
-                <div class="flex-item">progress2</div>
-            </div>
-
-        </div>
-        <div class="flex-container" id="row3">
-
-            <div class="flex-container" id="taskDone">
-                <div class="flex-item">done1</div>
-                <div class="flex-item">done2</div>
-            </div>
-        </div>
+    <div id="tasks" class="tasks">
 
     </div>
-    <script type="text/javascript" src="weblogic.js"></script>
-</body>
 
+    <script src="files/weblogic.js"></script>
+  </body>
 </html>
